@@ -10,4 +10,13 @@
 // Input: a Number representitive of the number of disks on the first poll
 // Output: the number of moves neccessary for completion
 
-// NO IDEA
+const towerOfHanoi = (numOfDisks) => {
+
+
+    let numOfMoves = 0;
+    
+
+
+
+    return numOfMoves;
+}

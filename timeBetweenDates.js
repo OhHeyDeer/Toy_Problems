@@ -29,11 +29,15 @@ const getDays = (date1, date2) => {
     }
     
     if (date1Month !== date2Month) {
-        // 10, 8, 5, 4 -- 30 day months
-        // 1 - 28 day month
-        // rest are 31 days
+        // Months 10, 8, 5, 4 -- 30 day months
+        // Month 1 - 28 day month
+        // Other Months are 31 days
+
+        // Set a min and a max
         let max;
         let min;
+
+        // Use a conditional to check which data is the min and which is the max.
         if (date1Month > date2Month) {
             max = date1Month;
             min = date2Month;
@@ -41,6 +45,8 @@ const getDays = (date1, date2) => {
             max = date2Month;
             min = date1Month;
         }
+
+        // Loop through the days from the min to the max and 
         for (let i = min; i <= max; i++) {
             const shorterDays = [10,8,5,4];
             if (shorterDays.includes(i)) {
@@ -59,8 +65,8 @@ const getDays = (date1, date2) => {
         const diff = Math.abs(date1Days - date2Days);
         return days + diff;
     }
-    // If NOT Check how many years they are off and then check the months difference 
-        // -- Then Check 
+    // If NOT Check how many years they are off and then check the months difference
+    // -- Then Check
     
 }
 console.log(getDays(

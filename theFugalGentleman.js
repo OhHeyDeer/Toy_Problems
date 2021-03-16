@@ -61,6 +61,8 @@ const chosenWine = (arrOfWine) => {
 }
 
 
+// Test Cases
+
 console.log(chosenWine([
     { name: "Wine A", price: 8.99 },
     { name: "Wine 32", price: 13.99 },

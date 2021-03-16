@@ -10,19 +10,14 @@
 
 // Constraints: Use For loops
 
-
-// Pseudocode
-
-
-
 const revSpecstring = (special) => {
 
     // Spread and split the string into an array
     let stringArray = special.split('');
 
-    // declare a special chars array containing all special characters
+    // Declare a special chars array containing all special characters
     let specialChars = ['!','@','#','$','%','^','&','*','(',')','-','_','+','=','{','}','[',']','|',':',';','"',"'",'<','>','?','/','.',',','`', '~'];
-    // declare a letters array for holding the letters in the string
+    // Declare a letters array for holding the letters in the string
     let lettersArray = [];
     let specialsArray = [];
     // Iterate through the specialString and check if each index is a special char or number. 
@@ -40,13 +35,12 @@ const revSpecstring = (special) => {
         }
     }
 
+    // Reverse the order of the letters array
     lettersArray = lettersArray.reverse();
-    // reverse the order of the letters array
-
-    // Iterate through the specialString array. 
 
     let letterCount = 0;
     let specialCount = 0;
+    // Iterate through the specialString array. 
     for (let j = 0; j < stringArray.length; j++) {
         let currentIndex = stringArray[j];
         if (currentIndex === 'addChar') {
@@ -67,7 +61,7 @@ const revSpecstring = (special) => {
 
 }
 
-
+// Test Cases
 
 console.log(revSpecstring("AFC#47GH$Ieu")); //  ➞ "ueI#47HG$CFA"
 console.log(revSpecstring("guyhiuj1234!@#$%rtyhghu")); //  ➞ "uhghytr1234!@#$%juihyug"

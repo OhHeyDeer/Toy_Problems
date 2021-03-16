@@ -15,13 +15,19 @@
 const countTrue = (boolArr) => {
     let count = 0;
     for (i of boolArr) {
+        // Checks if each value in the array is true.
         if (i === true) {
+            // When the value is true, the count is inceased by 1.
             count++;
         }
     }
+
+    // Return the total count of true values in the array.
     return count;
 }
 
+
+// Test Cases 
 
 console.log(countTrue([true, false, false, true, false])) // 2
 console.log(countTrue([false, false, false, false])); // 0

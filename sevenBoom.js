@@ -22,23 +22,24 @@
 
 const sevenBoom = (arrOfNums) => {
     // Iterate over each index
-    // -- Check if the index is the number 7.
-    // -- Check if either index in the stringified index is the number 7
     for (let i = 0; i < arrOfNums.length; i++) {
         const stringNum = arrOfNums[i].toString();
         if (stringNum.length > 1) {
             for (let j = 0; j < stringNum.length; j++) {
+                // -- Check if either index in the stringified index is the number 7
                 if (stringNum[j] === '7') {
                     return "Boom!";
                 }
             } 
         } else {
+            // -- Check if the index is the number 7.
             if (stringNum === '7') {
                 return "Boom!";
             }
         }
     }
 
+    // Fail Case if no 'Booms' are hit
     return "there is no 7 in the array";
     
 }

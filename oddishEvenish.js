@@ -14,16 +14,18 @@
 
 
 const oddishOrEvenish = (number) => {
-    // stringify the number using toString method
+    // Stringify the number using toString method
     let stringNum = number.toString();
 
     // Declare a total variable
     let total = 0;
+
     // Iterate across the string and add together the integer values from each index
     for(let i = 0; i < stringNum.length; i++) {
         total += Number.parseInt(stringNum[i]);
     }
-    // Modulous the total by 2 and see if there is a remainder
+
+    // Modulus the total by 2 and see if there is a remainder
     const remainder = total % 2;
 
     if (remainder === 0) {
@@ -35,6 +37,8 @@ const oddishOrEvenish = (number) => {
     }
 
 }
+
+// Test Cases
 
 console.log(oddishOrEvenish(43)); //  ➞ "Oddish"
 console.log(oddishOrEvenish(373)); //  ➞ "Oddish"

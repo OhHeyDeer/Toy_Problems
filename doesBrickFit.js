@@ -23,6 +23,9 @@ const doesBrickFit = (brickHeight, brickWidth, brickDepth, holeWidth, holeHeight
         return false;
     }
 }
+
+// Test Cases
+
 console.log(doesBrickFit(1, 1, 1, 1, 1));
 console.log(doesBrickFit(1, 2, 1, 1, 1));
 console.log(doesBrickFit(1, 2, 2, 1, 1));

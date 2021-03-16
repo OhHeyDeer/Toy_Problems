@@ -18,16 +18,15 @@
 // Inputs: two number values -- b,m
 // Output: the derivative of the two numbers
 
-
-
 const derivative = (b, m) => {
-
     // Raise the m value to the b - 1th power 
     // Multiply the equation by the b value
     const formula = (m**(b-1)) * b;
     // return value
     return formula;
 }
+
+// Test Cases
 
 console.log(derivative(1, 4));
 console.log(derivative(3, -2));

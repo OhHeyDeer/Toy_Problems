@@ -24,6 +24,8 @@ const sortIt = (weirdArray) => {
 
 
 
+// Test Cases 
+
 console.log(sortIt([4, 1, 3]));
 console.log(sortIt([[4], [1], [3]]));
 console.log(sortIt([4, [1], 3]));

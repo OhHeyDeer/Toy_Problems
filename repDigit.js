@@ -14,8 +14,6 @@
 // Constraints: 
 // Edge Cases: The Number 0 should return true
 
-
-
 const isRepdigit = (rawNumber) => {
 
     // Declare number as a string for comparison
@@ -39,6 +37,8 @@ const isRepdigit = (rawNumber) => {
         return false;
     }
 }
+
+// Test Cases
 
 console.log(isRepdigit(66)); // True
 console.log(isRepdigit(0)); // True 
