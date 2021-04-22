@@ -5,10 +5,20 @@
 
 const containsDuplicate = (arrayOfInts) => {
 
+    let holdingArray = [];
+    // Iterate thorugh the array, pushing to a new array only when a unique value
+    for (let i = 0; i < arrayOfInts.length; i++) {
+        // Check if the extra array has the value already
+        if (holdingArray.includes(arrayOfInts[i])) {
+            return true;
+        } else {
+            // Otherwise, push the new value into the array
+            holdingArray.push(arrayOfInts[i]);
+        }
+    }
 
-
-
-
+    // If the loop ends and no values are repeated.
+    return false;
 }
 
 
