@@ -8,23 +8,31 @@
 
 var isPossible = function (target) {
 
+    const reducer = (accumulator, currentValue) => accumulator + currentValue;
     // Declare Array of 1's
     let arrayA = [];
     for (let j = 0; j < target.length; j++) {
         arrayA.push(1);
     }
 
-    console.log(arrayA);
-    console.log(target);
+    let fact = false;
 
+    while (JSON.stringify(arrayA) !== JSON.stringify(target)) { // While the two arrays are inequal
 
-    // While target !=== A
-    // Find the sum and check if it is an integer in the target
+        // Find the sum of arrayA and check if this number exists within target
+        let totalSum = arrayA.reduce(reducer);
 
-    // If so then 
+        // If the target array has the sum in it, replace the correct index with the totalSum
+        if (target.includes(totalSum)) {
+            let index = target.indexOf(totalSum);
+            arrayA.splice(index, 1, totalSum);
+        } else { // Return false is the array does not include the sum. ** Will need to change for test case 3
+            return false;
+        }
+    }
 
-
-
+    // Will return out when the loop ends meaning the arrays are the same.
+    return true;
 
 };
 
@@ -34,8 +42,8 @@ var isPossible = function (target) {
 // Test Cases
 
 
-// console.log(isPossible([9,3,5]));
-isPossible([9,3,5]);
+console.log(isPossible([9,3,5]));
+// isPossible([9,3,5]);
 // Input: target = [9, 3, 5]
 // Output: true
 // Explanation: Start with [1, 1, 1]
@@ -44,10 +52,12 @@ isPossible([9,3,5]);
 // [1, 3, 5], sum = 9 choose index 0
 // [9, 3, 5] Done
 
+console.log(isPossible([1, 1, 1, 2]))
 // Input: target = [1, 1, 1, 2]
 // Output: false
 // Explanation: Impossible to create target array from[1, 1, 1, 1].
 
 // *** HARDER *****
+console.log(isPossible([8, 5]));
 // Input: target = [8, 5]
 // Output: true
