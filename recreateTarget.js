@@ -15,8 +15,6 @@ var isPossible = function (target) {
         arrayA.push(1);
     }
 
-    let fact = false;
-
     while (JSON.stringify(arrayA) !== JSON.stringify(target)) { // While the two arrays are inequal
 
         // Find the sum of arrayA and check if this number exists within target
@@ -26,8 +24,24 @@ var isPossible = function (target) {
         if (target.includes(totalSum)) {
             let index = target.indexOf(totalSum);
             arrayA.splice(index, 1, totalSum);
-        } else { // Return false is the array does not include the sum. ** Will need to change for test case 3
-            return false;
+        } else { 
+            // If the array does not include the sum, set the sum to the lowest number in the arrayA
+            // let minimum = Math.min(... arrayA);
+            // let indexMin = arrayA.indexOf(minimum);
+
+            // Replace the sum with the largest value in the target array area
+            let largestTarget = Math.max(... target);
+            let indexMax = target.indexOf(largestTarget);
+
+            // Replace the value in arrayA at indexMax with the totalSum ONLY IF it is smaller than the largest target
+            if (arrayA[indexMax] < largestTarget) {
+                arrayA.splice(indexMax, 1, totalSum);
+            }
+
+            // if (target[indexMin] > totalSum) { // Target value is larger than the replacement value
+            //     arrayA.splice(indexMin, 1, totalSum);
+            // }
+           
         }
     }
 
@@ -41,9 +55,7 @@ var isPossible = function (target) {
 
 // Test Cases
 
-
 console.log(isPossible([9,3,5]));
-// isPossible([9,3,5]);
 // Input: target = [9, 3, 5]
 // Output: true
 // Explanation: Start with [1, 1, 1]
@@ -62,8 +74,8 @@ console.log(isPossible([8, 5]));
 // Input: target = [8, 5]
 // Output: true
 
-// [1, 1]
-// [1, 2]
-// [3, 2]
-// [3, 5]
-// [8, 5]
+// [1, 1] -- Sum 2 choose index 1
+// [1, 2] -- Sum 3 choose index 0
+// [3, 2] -- Sum 5 choose index 1
+// [3, 5] -- Sum 8 choose index 0
+// [8, 5] Done
