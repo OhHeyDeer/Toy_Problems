@@ -61,3 +61,9 @@ console.log(isPossible([1, 1, 1, 2]))
 console.log(isPossible([8, 5]));
 // Input: target = [8, 5]
 // Output: true
+
+// [1, 1]
+// [1, 2]
+// [3, 2]
+// [3, 5]
+// [8, 5]
