@@ -15,7 +15,7 @@ var isPossible = function (target) {
         arrayA.push(1);
     }
 
-    while (JSON.stringify(arrayA) !== JSON.stringify(target)) { // While the two arrays are inequal
+    while (JSON.stringify(arrayA) !== JSON.stringify(target)) { // While the two arrays are inequal using their stringified format
 
         // Find the sum of arrayA and check if this number exists within target
         let totalSum = arrayA.reduce(reducer);
@@ -24,10 +24,8 @@ var isPossible = function (target) {
         if (target.includes(totalSum)) {
             let index = target.indexOf(totalSum);
             arrayA.splice(index, 1, totalSum);
-        } else { 
-            // If the array does not include the sum, set the sum to the lowest number in the arrayA
-            // let minimum = Math.min(... arrayA);
-            // let indexMin = arrayA.indexOf(minimum);
+
+        } else {
 
             // Replace the sum with the largest value in the target array area
             let largestTarget = Math.max(... target);
@@ -38,21 +36,18 @@ var isPossible = function (target) {
                 arrayA.splice(indexMax, 1, totalSum);
             }
 
+
+            // Attempts to fix the final issue
             // if (target[indexMin] > totalSum) { // Target value is larger than the replacement value
             //     arrayA.splice(indexMin, 1, totalSum);
             // }
            
         }
     }
-
     // Will return out when the loop ends meaning the arrays are the same.
     return true;
-
 };
-
-
-
-
+// ----------------------------------------------------------------------------
 // Test Cases
 
 console.log(isPossible([9,3,5]));
@@ -73,9 +68,10 @@ console.log(isPossible([1, 1, 1, 2]))
 console.log(isPossible([8, 5]));
 // Input: target = [8, 5]
 // Output: true
-
+// Explanation:
 // [1, 1] -- Sum 2 choose index 1
 // [1, 2] -- Sum 3 choose index 0
 // [3, 2] -- Sum 5 choose index 1
 // [3, 5] -- Sum 8 choose index 0
 // [8, 5] Done
+// ----------------------------------------------------------------------------
