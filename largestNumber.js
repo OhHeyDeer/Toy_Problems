@@ -23,6 +23,12 @@ var largestNumber = function (nums) {
     while (numbersArray[0]) {
         // -- Take the highest value in the array and add it to the string
         highest = Math.max(... numbersArray);
+        // Separate the double digits with the single digits first
+        // Find the highest single digit and highest double digit
+        
+
+
+
         indexHighest = numbersArray.indexOf(highest); // Could have issues with multiple numbers of the same value
         largestNumString += highest;
 
