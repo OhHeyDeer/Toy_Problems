@@ -25,7 +25,7 @@ var largestNumber = function (nums) {
         highest = Math.max(... numbersArray);
         // Separate the double digits with the single digits first
         // Find the highest single digit and highest double digit
-        
+
 
 
 
@@ -39,11 +39,6 @@ var largestNumber = function (nums) {
     return largestNumString;
 
 };
-
-
-
-
-
 // Test Cases
 
 
