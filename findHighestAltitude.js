@@ -13,10 +13,16 @@ const largestAltitude = (gain) => {
     let highestAltitude = 0;
 
     // Loop through the gain array, adding each value to the currentAltitude.
-    // On each iteration, check if the currentAltitude is larger than the highest. 
-    // If so, redefine highestAltitude to be currentAltitude
-
-    // Return the highestAltitude after the loop is complete.
+    for (let i = 0; i < gain.length; i++) {
+        currentAltitude += gain[i];
+        // On each iteration, check if the currentAltitude is larger than the highest.
+        if (currentAltitude > highestAltitude) {
+            // If so, redefine highestAltitude to be currentAltitude
+            highestAltitude = currentAltitude;
+        }
+    }
+        // Return the highestAltitude after the loop is complete.
+        return highestAltitude;
 
 };
 
