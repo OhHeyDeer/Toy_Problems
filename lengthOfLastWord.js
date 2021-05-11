@@ -10,9 +10,14 @@
 
 var lengthOfLastWord = function (s) {
 
-
     // Split the string with spaces 
+    let splitString = s.split(" ");
     // Check the number of substrings, if less than 2, return 0
+    if (splitString.length < 2) {
+        return 0;
+    } else {
+        return splitString[splitString.length - 1].length;
+    }
     // else return the length of the substring
 
 };
@@ -22,13 +27,13 @@ var lengthOfLastWord = function (s) {
 // Test Cases
 
 // Example 1:
-
+console.log(lengthOfLastWord('Hello World'));
 // Input: s = "Hello World"
 // Output: 5
 
 
 
 // Example 2:
-
+console.log(lengthOfLastWord(' '));
 // Input: s = " "
 // Output: 0
